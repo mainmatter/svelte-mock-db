@@ -4,16 +4,16 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
+		"dev": "dotenv vite dev",
+		"build": "dotenv vite build",
+		"preview": "dotenv vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
-		"test:e2e": "playwright test",
-		"test": "npm run test:e2e",
+		"test:e2e": "dotenv --env-file=.env.test playwright test",
+		"test": "pnpm test:e2e",
 		"db:push": "drizzle-kit push",
 		"db:generate": "drizzle-kit generate",
 		"db:migrate": "drizzle-kit migrate",
@@ -28,6 +28,7 @@
 		"@sveltejs/vite-plugin-svelte": "^6.0.0",
 		"@types/node": "^22",
 		"drizzle-kit": "^0.30.2",
+		"drizzle-seed": "^0.3.1",
 		"eslint": "^9.18.0",
 		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-svelte": "^3.0.0",
@@ -43,6 +44,7 @@
 	},
 	"dependencies": {
 		"@libsql/client": "^0.14.0",
+		"dotenv-cli": "^10.0.0",
 		"drizzle-orm": "^0.40.0"
 	},
 	"pnpm": {
