@@ -4,6 +4,6 @@
 
 <ul>
 	{#each data.users as user (user.id)}
-		<li>{user.name} - {user.name}</li>
+		<li>{user.id} - {user.name}</li>
 	{/each}
 </ul>
